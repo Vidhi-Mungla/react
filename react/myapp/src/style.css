@@ -1,0 +1,27 @@
+.vidhi
+{
+    font-size: 60px;
+}
+.app {
+    font-family: sans-serif;
+    text-align: center;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+  
+  img{
+    object-fit: contain;
+    height:200px;
+  }
+  
+  .background-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin: auto;
+    background-image: url(./reactLogo.png);
+  }
+  

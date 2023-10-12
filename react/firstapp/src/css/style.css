@@ -1,0 +1,419 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    background-color: blue;
+    height: 70px;
+    display: flex;
+}
+.header .right
+{
+width: 50%;
+ line-height: 70px;
+
+}
+.header .right h2
+{
+    color: white;
+    padding-left: 180px;
+}
+.header .left
+{
+width: 50%;
+ 
+}
+.header .left .inner-div
+{
+    height: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.header .left .inner-div .nri
+{
+ height: 40px;
+ width: 40px;
+ margin-top: 15px;
+ color: white;
+ text-align: center;
+ line-height: 40px;
+
+}
+.header .left .inner-div .mainflag
+{
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+}
+
+.header .left .inner-div .mainflag .flag
+{
+ height: 30px;
+ width: 30px;
+ border-radius: 50%;
+ background-image: url(../images/flag.png);
+ background-size: 100% 100%;
+ line-height: 40px;
+ margin-top: 5px;
+ margin-left: 5px;
+
+}
+.header .left .inner-div .logo
+{
+ height: 40px;
+ width: 40px;
+ margin-top: 15px;
+ text-align: center;
+
+}
+.header .left .inner-div .logo i
+{
+  font-size: 23px;
+  color: white;
+   line-height: 40px;
+}
+.header .left .inner-div .list
+{
+    height: 40px;
+    width: 170px;
+    margin-top: 15px;
+    color: white;
+    line-height: 40px;
+     text-align: center;
+
+}
+.header .left .inner-div .register
+{
+    height: 40px;
+ width: 100px;
+ background-color: white;
+ margin-top: 15px;
+ text-align: center;
+
+}
+.header .left .inner-div .sign-in
+{
+    height: 40px;
+    width: 100px;
+    background-color: white;
+    margin-top: 15px;
+    text-align: center;
+ 
+}
+
+.usr 
+{
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    display: none;
+}
+.bar
+{
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    display: none;
+}
+.header .left .inner-div a
+{
+    color: rgb(19, 93, 139);
+    line-height: 40px;
+    text-decoration: none;
+
+}
+.header .left .inner-div .x:hover
+{
+    background-color: rgba(255, 255, 255, 0.324);
+}
+.header .left .y:hover
+{
+    background-color: rgba(255, 255, 255, 0.324);
+}
+.header-down
+{
+    background-color: blue;
+    height: 70px;
+    line-height: 70px;
+    border: 2px solid white;
+
+}
+.header-down .header-inner
+{
+    height: 55px;
+    width: 50%;
+    margin-top:5px;
+    margin-left: 180px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.header-down .header-inner li
+{
+    list-style: none;
+    padding: 10px;
+    border-radius: 25px;
+    line-height: 40px;
+}
+.header-down .header-inner li i
+{
+    color: white;
+}
+.header-down .header-inner li:hover
+{
+    background-color: rgba(255, 255, 255, 0.324);
+}
+.header-down .header-inner a
+{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+}
+.stay
+{
+    background-color: rgba(255, 255, 255, 0.324);
+    border: 1px solid white;
+}
+.more
+{
+    display: none;
+}
+.img {
+    height: 400px;
+    width: 100%;
+    background-image: url("https://r-xx.bstatic.com/xdata/images/xphoto/2880x868/279346280.jpeg?k=1f5ef835475595e138026356cdf0664eafb17cc2fc5aa9d09d90407d7ca866a1&amp;o=");
+    background-size: 100% 100%;
+    box-shadow: inset 100px 0px 60px 0px rgba(0, 0, 0, 0.9), inset -100px 0px 50px 0px rgba(0, 0, 0, 0.9);
+}
+
+
+.img .text
+{
+    height: 300px;
+    width: 40%;
+    margin-left: 200px;
+}
+.img .text h1
+{
+    padding-top: 50px;
+    color: white;
+    font-size: 50px;
+}
+.img .text p
+{
+    font-size: 25px;
+    color: white;
+}
+.img .text .discover
+{
+    height: 45px;
+    width: 130px;
+    border-radius: 5%;
+    background-color: rgb(55, 113, 196);
+    color: white;
+    margin-top: 50px;
+    line-height: 40px;
+    text-align: center;
+}
+.img .text .discover:hover
+{
+    background-color:blue;
+
+}
+
+.main
+{
+    height: 60px;
+    width: 80%;
+    background-color: white;
+    border: 3px solid orange;
+    display: flex;
+    margin: auto;
+    margin-top: -20px;
+
+}
+.main .first
+{
+    height: 60px;
+    width: 30%;
+    border: 3px solid orange;
+
+}
+.main .first input
+{
+      height: 30px;
+      width: 80%;
+      margin-left: 20px;
+      margin-top: 10px;
+      border: none;
+}
+.main .first i{
+    color: grey;
+    padding-left: 10px;
+   
+}
+
+.main .second
+{
+    height: 60px;
+    width: 30%;
+    border: 3px solid orange;
+    line-height: 50px;
+   text-align: center;
+}
+.main .second i
+{
+    color: gray;
+}
+.main .third
+{
+    height: 60px;
+    width: 30%;
+    border: 3px solid orange;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+
+}
+.main .third i
+{
+    color: gray;
+}
+.main .third p{
+    position: absolute;
+    top: 0;
+    left: 90%;
+}
+
+.main .four
+{
+    height: 60px;
+    width: 10%;
+    font-size: 22px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    background-color: rgb(55, 113, 196);
+    border: 3px solid orange;
+
+}
+.main .four:hover
+{
+    background-color: blue;
+}
+
+
+@media(max-width:600px)
+{
+    .header .right h2
+{
+    padding-left: 0px;
+}
+
+.header .left .inner-div
+{
+    display: none;
+}
+.usr 
+{
+   margin-left: 140px;
+    display:inline-block ;
+}
+.bar
+{
+    display: inline-block;
+}
+.header-down .header-inner
+{
+    width: 100%;
+    margin-left: 0px;
+    justify-content: space-around;
+    padding-right: 150px;
+    
+}
+.car
+{
+    display: none;
+}
+.att
+{
+    display: none;
+}
+.taxi
+{
+    display: none;
+}
+.more
+{
+    display: block;
+}
+.img{
+    box-shadow: none;
+    background-size:150% 100%;
+ 
+}
+.img .text
+{
+    height: 300px;
+    width: 100%;
+    margin-left: 10px;
+}
+.img .text h1
+{
+    padding-top: 50px;
+    font-size: 45px;
+}
+.img .text p
+{
+    font-size: 20px;
+}
+
+
+.main {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    margin: 0;
+
+}
+
+.main .first,
+.main .second,
+.main .third,
+.main .four {
+    width: 100%;
+    height: 60px;
+    margin:  0;
+}
+
+.main .first input {
+    width: 90%;
+}
+
+.main .third p {
+    top: 0;
+    left: 90%;
+}
+.main .second
+{
+    padding-left: 10px;
+    text-align: left;
+}
+.main .third
+{
+    padding-left: 10px;
+    text-align: left;
+}
+}
+ 
