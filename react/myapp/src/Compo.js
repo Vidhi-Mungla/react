@@ -2,7 +2,6 @@ import React from "react";
 import './style.css';
 import test1 from "./car.jpg";
 import test from "./image/car.jpg"
-import reactLogo from "./reactLogo.png";
 
 class DemoClass extends React.Component
 {

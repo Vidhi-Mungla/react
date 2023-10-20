@@ -296,6 +296,8 @@ width: 50%;
     left: 90%;
 }
 
+
+
 .main .four
 {
     height: 60px;
@@ -313,7 +315,12 @@ width: 50%;
     background-color: blue;
 }
 
-
+.card{
+    height: 200px;
+    width: 600px;
+    margin: auto;
+    border: 2px solid black;
+}
 @media(max-width:600px)
 {
     .header .right h2
