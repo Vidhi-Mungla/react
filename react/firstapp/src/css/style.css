@@ -315,12 +315,92 @@ width: 50%;
     background-color: blue;
 }
 
-.card{
-    height: 200px;
-    width: 600px;
-    margin: auto;
-    border: 2px solid black;
+
+.card1
+{
+    padding: 20px;
+    margin: 200px 0px;
+    border: 1px solid; 
+    border-radius: 15px;
+    display: flex;
 }
+
+.card1  .image
+{
+    width: 20%; 
+    position: relative;
+ }
+
+.card1  .image span
+{
+    padding: 8px; font-size: 28px;
+    position: absolute;
+    top: 0%;
+    left: 83%;
+}
+.card1 .image span a
+{
+    text-decoration: none; 
+    color: white;
+}
+
+.card1  img
+{
+    border-radius: 20px;
+}
+
+
+.card1  .info
+{
+    width: 80%; 
+    display: flex; 
+}
+
+.card1 .info .text
+{
+    width: 80%; 
+    padding: 20px;
+}
+
+.card1 .info .text p
+{
+    font-size: 15px;
+     margin: 18px 0px;
+}
+
+.card1 .info .text span
+{
+    padding: 0px 15px;
+}
+
+.card1 .info .btns
+{
+    width: 20%;
+     padding: 30px 0px;
+}
+
+.card1 .info .btns .book
+{
+    width: 70%;
+    border-radius: 5px;
+    margin: auto;
+     background-color: #FFB700; 
+     padding: 3px;
+}
+
+.card1  .info .btns button
+{
+    outline: none;
+    border: none;
+    background-color: blue; 
+    border-radius: 5px;
+     margin: 20px 0px 0px 60px;
+}
+
+
+
+
+
 @media(max-width:600px)
 {
     .header .right h2

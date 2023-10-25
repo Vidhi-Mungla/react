@@ -12,7 +12,7 @@ class App extends React.Component {
 
   x = function xyz()
   {
-    // alert("class alert")
+   // alert("class alert")
   }
 
   sum = ()=>{
@@ -47,7 +47,7 @@ function Test()
 
   function abc()
   {
-    // alert("fun alert...!")
+   alert("fun alert...!")
   }
 
   return(<>

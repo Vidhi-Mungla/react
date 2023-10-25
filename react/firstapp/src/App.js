@@ -1,5 +1,4 @@
 import Home from './Component/Home.js';
-import Card from "./Component/Card.js";
 
 function App()
  {
@@ -7,7 +6,7 @@ function App()
     <>
        
         <Home/>
-        <Card/>
+        
     </>
   );
 }

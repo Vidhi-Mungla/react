@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import Test1 from './Test123';
 import PropsEx from './PropsEx';
+import State from './State';
+import Ex1 from './Ex1';
+import InputValueUpdate from './input';
 
 class Test extends React.Component 
 {
@@ -17,7 +20,7 @@ class Test extends React.Component
     return(
       <>
       
-      <PropsEx name="123" age={22} course={[12,34,45]}/>
+      <PropsEx name="123" age={22} course={[12,34,45]}/> 
       <button onClick={this.Chk}>Get Alert</button>
       <Abhay/>
         <h1>Hello Class...!</h1>
@@ -27,6 +30,9 @@ class Test extends React.Component
       <p>para</p>
 
       <Test1/>
+      <Ex1/>
+      <State/>
+      <InputValueUpdate/>
       
       </>
     )
