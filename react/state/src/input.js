@@ -7,7 +7,6 @@ function InputValueUpdate()
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
-
   return (
     <div>
       <h3>Enter:{inputValue}</h3>
