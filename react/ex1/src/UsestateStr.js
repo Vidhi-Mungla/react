@@ -6,7 +6,9 @@ function UsestateStr() {
 
   const updateStr = ()=>{
     // setStr("Hello");
+
     // setStr(str + " Dharmesh");
+
     // setStr(()=>(
     //   str + " Nakum"
     // ))
@@ -14,6 +16,7 @@ function UsestateStr() {
     // setStr((x)=>(
     //   x + " Abhay"
     // ))
+    
     setStr(a=>a+ " Dhaval")
 
   }

@@ -7,6 +7,8 @@ import UsestateFormChkBoxBoolean from './UsestateFormChkBoxBoolean';
 import UsestateObj from './UsestateObj';
 import UsestateObj1 from './UsestateObj1';
 import UsestateNestedObj from './UsestateNestedObj';
+import NestedObj from './NestedObj';
+
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
       <UsestateFormChkBoxBoolean/>
       <UsestateObj/>
       <UsestateObj1/>
-
+       <NestedObj/>
 
  </>
   );
