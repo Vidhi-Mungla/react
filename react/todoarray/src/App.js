@@ -5,8 +5,12 @@ import "./App.css"
 import ColorChange from './ColorChange';
 import New from './new';
 import Crud from './Crud';
+import MyForm from './MyForm';
+import Form from './Form';
+import UseRefHook from './RefHook';
 
 let nextId=4;
+
 function App() 
 {
     const intialtodos = [
@@ -67,6 +71,9 @@ function App()
       <ColorChange/>
       <New/>
       <Crud/>
+      <MyForm/>
+      <Form/>
+      <UseRefHook/> 
     </div>
   )
 }

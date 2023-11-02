@@ -3,11 +3,10 @@ import React, { useState } from 'react'
 const initial = [
     {id:1,title:"mango"},
     {id:2,title:"banana"},
-    {id:3,title:"apple"},
-];
-function Crud() 
-{
+    {id:3,title:"apple"},];
 
+function Crud() 
+{    
     const [todo,setTodo] = useState(initial);
     const [add,setAdd] = useState("");
     const[isEditing,setisEditing] = useState("");
@@ -50,7 +49,7 @@ function Crud()
             <ul>
                 <li key={v.id}>
                    {
-                   isEditing== v.id ?
+                   isEditing == v.id ?
                     (<> 
                       <input type="text" name="" id="" value={editText} onChange={(e)=>seteditText(e.target.value)} />
                       <button onClick={()=>saveTodo(v.id)}>Save</button>

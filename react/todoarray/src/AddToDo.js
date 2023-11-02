@@ -5,6 +5,7 @@ function AddToDo({onAddToDo}) {
     const [title,setTitle] = useState("");
   return (
     <div>
+        
         {/* {title} */}
 
         <input
@@ -20,9 +21,7 @@ function AddToDo({onAddToDo}) {
         value={title}
         onChange={(e)=>{setTitle(e.target.value)}}
         />
-        <button className='btn' onClick={()=>{
-            onAddToDo(title)
-        }}>Add</button>
+        <button className='btn' onClick={()=>{onAddToDo(title)}}>Add</button>
       
     </div>
   )
