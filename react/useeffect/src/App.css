@@ -7,14 +7,6 @@
   pointer-events: none;
 }
 
-.btn
-{
-  background-color:pink;
-  height: 30px;
-  width: 70px;
-  border: 1px solid  black;
-
-}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

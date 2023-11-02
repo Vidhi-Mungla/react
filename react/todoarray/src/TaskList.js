@@ -1,31 +1,24 @@
 import React, { useState } from 'react'
 
-function TaskList({x,onChangeTodo,onDeleteTodo}) {
-
-    x.map((val)=>{
-        <li>
-            {val.title}
-        </li>
-    })
-
-   <Task 
-//    todo={todos}
-//    onChange={onChangeTodo}
-//    onDelete={onDeleteTodo}
-   />
-
-
-   
-  
-
-   
-
+function TaskList({todos,onChangeTodo,onDeleteTodo}) 
+{
   return (
     <div>
-
-      
-      
-    </div>
+        <ul>
+            {todos.map((t)=>{
+               return(
+                <li key={t.id}>
+                {/* {t.title} */}
+                <Task
+                    todo={t}
+                    onChange={onChangeTodo}
+                    onDelete={onDeleteTodo}
+                />
+                </li>
+               )
+            })}
+        </ul>   
+    </div> 
   )
 }
 
@@ -33,43 +26,42 @@ function TaskList({x,onChangeTodo,onDeleteTodo}) {
 function Task({todo,onChange,onDelete})
 {
     const [edit,setEdit] = useState(false);
+
     let content;
 
-    if(!edit)
+    if(edit)
     {
-        content = <>
-
-            <input
-            value={todo.title}
-            onChange={()=>{
-                onChange()
-            }}
-            />
-            <button>Save</button>
-
+        content = 
+        <>
+        <input
+        type='text'
+        value={todo.title}
+        onChange={(e)=>{
+            onChange({
+                ...todo,
+                title:e.target.value
+            })
+        }}/>
+        <button onClick={()=>{setEdit(false)}}>Save</button>
         </>
     }
+
     else 
     {
-        content = <>
-
-            {todo.title}
-            <button>Edit</button>
-
-        </>
+       content = 
+       <>
+       {todo.title} 
+       <button onClick={()=>{setEdit(true)}}>Edit</button>
+       </>
     }
-    
-    return(
+
+
+    return (
         <>
-
-            <button onClick={onDelete}>Delete</button>
-        
+          {content}
+          <button onClick={() => onDelete(todo.id)}>Delete</button>
         </>
-    )
-}
-
-
-
-
+      );
+    }
 
 export default TaskList
