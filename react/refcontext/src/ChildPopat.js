@@ -12,6 +12,7 @@ function ChildPopat() {
     <div>
 
         Child Popat
+        
         <h1>{data + " " + data1.name} </h1>
       
     </div>

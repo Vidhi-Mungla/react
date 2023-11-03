@@ -13,9 +13,9 @@ function UseContext()
         <strVal.Provider value={"test123"}>
             <arrVal.Provider value={{id:1,name:"Riddhi"}}>
                 <ParentCompo/>
-            </arrVal.Provider>
+            </arrVal.Provider> 
         </strVal.Provider>  
-                  
+
     </div>
   )
 }

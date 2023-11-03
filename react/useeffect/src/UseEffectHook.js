@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react'
 
 // useEffect(()=>{})
 // useEffect(()=>{},[])
-// useEffect(()=>{},[values])
+// useEffect(()=>{},[values])  // useEffect(()=>{},[1,2,3,4])  
 
 function UseEffectHook() {
 
-   const[pos,setPos] =  useState({x:0,y:0})
-
-
+      const[pos,setPos] =  useState({x:0,y:0})
 
 useEffect(()=>{
     const handleMove = (e)=>{
@@ -20,15 +18,11 @@ useEffect(()=>{
         console.log(e)
     }
 
-    window.addEventListener("mousemove",handleMove)
+    window.addEventListener("mousemove",handleMove) 
+    
 })
  
-
-
-
-  return (
-
-
+return (
     <div style={{
         height:20,
         width:20,
@@ -38,10 +32,8 @@ useEffect(()=>{
         top:-10,
         left:-10,
         border:"3px groove blue",
-        borderRadius:"50%"
-        
-    }}>
-     
+        borderRadius:"50%"     
+    }}>   
     </div>
   )
 }
