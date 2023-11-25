@@ -4,7 +4,7 @@ function TaskList({todos,onChangeTodo,onDeleteTodo})
 {
   return (
     <div>
-        <ul>
+        <ul> 
             {todos.map((t)=>{
                return(
                 <li key={t.id}>
@@ -21,7 +21,6 @@ function TaskList({todos,onChangeTodo,onDeleteTodo})
     </div> 
   )
 }
-
 
 function Task({todo,onChange,onDelete})
 {
@@ -55,7 +54,6 @@ function Task({todo,onChange,onDelete})
        </>
     }
 
-
     return (
         <>
           {content}
@@ -64,4 +62,4 @@ function Task({todo,onChange,onDelete})
       );
     }
 
-export default TaskList
+export default TaskList 

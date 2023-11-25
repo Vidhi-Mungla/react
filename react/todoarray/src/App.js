@@ -16,7 +16,8 @@ function App()
     const intialtodos = [
     {id:1,title:"Apple"},
     {id:2,title:"Banana"},
-    {id:3,title:"Mango"}];
+    {id:3,title:"Mango"}
+  ];
 
   const [todos,setTodos] = useState(intialtodos);
 
