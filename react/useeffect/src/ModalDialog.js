@@ -19,18 +19,15 @@ function ModalDialog()
             <button onClick={()=>{setShow(false)}}>OK</button>
         </ModalEX>
 
-
-      
     </div>
   )
 }
 
 export default ModalDialog
-
  function ModalEX({isOpen,children})
 {
 
-    const refDialog = useRef()
+    const refDialog = useRef();
 
     useEffect(()=>{
 
@@ -52,7 +49,9 @@ export default ModalDialog
     return(
         <>
 
-        <dialog ref={refDialog}>{children}</dialog>
+        <dialog ref={refDialog}>
+            {children}
+        </dialog>
         </>
-    )
+    );
 }

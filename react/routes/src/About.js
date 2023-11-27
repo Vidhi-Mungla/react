@@ -7,8 +7,7 @@ function About() {
    <>
    
     <div>
-        this is ABOUT page
-      
+        THIS IS ABOUT PAGE      
     </div>
    
    </>

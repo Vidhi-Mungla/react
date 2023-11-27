@@ -1,18 +1,19 @@
 import React from 'react'
-import { CreateConnetion } from './CreateConnetion'
+import { CreateConnection } from './CreateConnection'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
-function ChatRoom({roomId}) {
+function ChatRoom({roomId})
+ {
    // http://localhost:3000/
 
    const [serverUrl,setServerUrl] =  useState("http://localhost:1234/")
 
-    // CreateConnetion(serverUrl,roomId)
+    // Createconnection(serverUrl,roomId)
 
     useEffect(()=>{
 
-       const connection =  CreateConnetion(serverUrl,roomId);
+       const connection =  CreateConnection(serverUrl,roomId);
        connection.connect();
 
        return()=>{

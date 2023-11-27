@@ -2,11 +2,13 @@ import React from 'react'
 
 function Services() {
   return (
+    <>
+    
     <div>
-
-        this is SERVICES page
-      
+           THIS IS SERVICE PAGE      
     </div>
+
+    </>
   )
 }
 

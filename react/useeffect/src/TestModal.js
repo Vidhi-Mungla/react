@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from "react";
-
 import { useRef } from "react";
 import { useEffect } from "react";
 
-function TestModal() {
+function TestModal()
+ {
     const [show, setShow] = useState(false);
 
   return (
@@ -21,11 +21,12 @@ function TestModal() {
     </div>
   )
 }
-
 export default TestModal
 
 
-function PopModal({ isOpen, children }) {
+
+function PopModal({ isOpen, children }) 
+{
 
     const dRef = useRef();
     console.log(dRef);
@@ -36,6 +37,7 @@ function PopModal({ isOpen, children }) {
   {
     return;
   }
+
     const dialog = dRef.current;
     dialog.showModal();
   

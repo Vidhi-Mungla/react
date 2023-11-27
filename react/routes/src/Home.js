@@ -1,12 +1,16 @@
 import React from 'react'
 import {Row, Col } from 'react-bootstrap'
 
-function Home() {
+function Home()
+{
   return (
+
    <>
-         <div>
-        <img height={100} src='https://buffer.com/library/content/images/2023/10/free-images.jpg'></img>
-      THIS HOME PAGE
+    <div>
+
+         <img height={100} src='https://buffer.com/library/content/images/2023/10/free-images.jpg'></img>
+          THIS HOME PAGE
+
     </div>
 
     <div>
@@ -26,7 +30,8 @@ function Home() {
    </div>
    
    </>
+
   )
 }
 
-export default Home
+export default Home 

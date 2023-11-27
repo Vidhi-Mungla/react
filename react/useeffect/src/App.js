@@ -4,17 +4,15 @@ import TriggerElementOnScroll, { Box } from './TriggerElementOnScroll';
 import ModalDialog from './ModalDialog';
 import UseEffectHook from './UseEffectHook';
 import TestModal from './TestModal';
-import { CreateConnetion } from './CreateConnection';
 
 function App() {
 
 
   return (
     <div className="App">
-    <UseEffectHook/>
+  {/* <UseEffectHook/> */}
       <ModalDialog/>
       <TestModal/>
-      <CreateConnetion/>
    <Chat/>
 
    <TriggerElementOnScroll/>
@@ -22,6 +20,8 @@ function App() {
    <TriggerElementOnScroll/>
 
     </div>
+
+
   );
 }
 

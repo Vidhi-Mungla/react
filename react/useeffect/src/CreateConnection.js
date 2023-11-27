@@ -1,12 +1,17 @@
+import React from 'react'
 
-export function CreateConnetion(serverUrl,roomId) {
+export function CreateConnection(serverUrl,roomId) {
   return {
-    connect(){
+
+    connect()
+    {
         console.log("Connected to "+ roomId + " at " + serverUrl)
     },
-    disconnect(){
+
+    disconnect()
+    {
         console.log("Disconnected from "+ roomId + " at" + serverUrl)
     }
+    
   }
 }
-
