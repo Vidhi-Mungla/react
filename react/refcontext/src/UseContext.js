@@ -2,7 +2,6 @@ import React, { createContext } from 'react'
 import ParentCompo from './ParentCompo'
 
 export const strVal = createContext()
-
 export const arrVal = createContext()
 
 function UseContext() 
@@ -20,4 +19,4 @@ function UseContext()
   )
 }
 
-export default UseContext
+export default UseContext 

@@ -13,13 +13,14 @@ function App()
     <BrowserRouter>
 
     <Link to="/home" className='text-dark fw-bold me-3'>Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/Services">Services</Link> 
+    <Link to="/about" className='text-dark fw-bold me-3'>About</Link>
+    <Link to="/Services" className='text-dark fw-bold me-3'>Services</Link> 
     
     <Routes>
       <Route path='/home' element={<Home/>}></Route>
       <Route path='/about' element={<About/>}></Route>
       <Route path='/services' element={<Services/>}></Route>
+ 
     </Routes>
 
     </BrowserRouter>

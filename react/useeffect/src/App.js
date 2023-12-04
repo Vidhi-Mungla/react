@@ -15,9 +15,9 @@ function App() {
       <TestModal/>
    <Chat/>
 
-   <TriggerElementOnScroll/>
+   {/* <TriggerElementOnScroll/>
    <Box/>
-   <TriggerElementOnScroll/>
+   <TriggerElementOnScroll/> */}
 
     </div>
 
