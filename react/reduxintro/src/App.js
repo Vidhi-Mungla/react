@@ -6,14 +6,16 @@ import { Increment, Decrement } from './action';
 
 function App()
 {
-  const dispatch = useDispatch();
-  const counter = useSelector(state => state.count)
 
-  return (
+  const dispatch = useDispatch();
+  const counter = useSelector(state => state.count) 
+
+  return
+  (
     <div>
 
     <button onClick={()=>{dispatch(Increment())}}>+</button>
-      {counter}
+     {counter}
     <button onClick={()=>{dispatch(Decrement())}}>-</button>
 
     </div>

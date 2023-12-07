@@ -1,122 +1,87 @@
-import React, { useState,useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 function EmpEdit() {
-
-    const [id,idChnage] = useState("")
-    const [name,nameChange]  = useState("")
-    const [email,emailChange] = useState("")
-    const [phone,phoneChange] = useState("")
-    const [active,activeChange] = useState(false)
-
+    const [id,changeid] = useState("");
+    const [name,changename] = useState("");
+    const [email,changeemail] = useState("");
+    const [phone,changephone] = useState("");
+    const [active,changeactive] = useState(false);
     const navigate = useNavigate();
-    const {empId} = useParams();
-
-    // const [empdata,setEmpdata] =  useState("")
-
+    const {empid} = useParams();
+    
     useEffect(()=>{
-        fetch("http://localhost:8000/employee/"+empId)
+        fetch("http://localhost:8000/employee/"+empid)
         .then((res)=>{return res.json()})
         .then((data)=>{
-            // console.log(data)
-            // console.log(data.id)
-            // setEmpData(data)
-            idChnage(data.id)
-          
-            nameChange(data.name)
-            emailChange(data.email)
-            phoneChange(data.phone)
-        
+            changeid(data.id)
+            changename(data.name)
+            changeemail(data.email)
+            changephone(data.phone)
         })
-        .catch((e)=>{console.log(e.message)})
-    })
+        .catch((err)=>{console.log(err.message)})
+      },[])
+    
+        const Loadview = (id)=>{
+          navigate('/employee/view/'+id)
+        }
+        const LoadEdit = (id)=>{
+          navigate('/employee/edit/'+id)
+        }
 
-    const handleClick = (e)=>{
+    const finaldata = {id,name,email,phone,active};
+    const handlesubmit = (e)=>{
+        e.preventDefault()
 
-        e.preventDefault();
-
-        console.log({id,name,email,phone,active})
-
-       const empData = {id,name,email,phone,active}
-
-
-        // console.log(e)
-
-        fetch("http://localhost:8000/employee/"+empId,{
+        fetch("http://localhost:8000/employee/"+empid,{
             method:"PUT",
             headers:{"content-type":"application/json"},
-            body:JSON.stringify(empData)
+            body:JSON.stringify(finaldata)
         })
         .then((res)=>{
-            // console.log(res.json())
-            // return res.json();
-
             if(res)
             {
-                alert("updated Successfully..!");
+                alert("Edited  sucessfulyy....")
                 navigate('/')
-
             }
-
         })
-               
+
     }
   return (
-    <div className="container text-center m-5">
-    <div className="row d-flex justify-content-center">
-      <div className="card">
-          <div className="card-title">
-              <h3>Edit Employee</h3>
-          </div>
+    <div>
+     <div>
+        <h2 className='my-5'>
+            Add-Employee
+        </h2>
+      <form className='col-6 m-auto border border-3 text-start p-4' onSubmit={handlesubmit}>
+        
+        <label className='form-lable'>Id:</label>
+        <input className='form-control' disabled="disabled" value={id} onChange={(e)=>{changeid(e.target.value)}}></input>
+        
+        <label className='form-lable'>Name:</label>
+        <input className='form-control' value={name} onChange={(e)=>{changename(e.target.value)}}></input>
 
-      </div>
-      <div className="col-lg-6">
-        <div className="card-body">
-          <form onSubmit={handleClick} className="container text-start m-3">
+        <label className='form-lable'>Email:</label>
+        <input className='form-control' value={email} onChange={(e)=>{changeemail(e.target.value)}}></input>
 
-            <div className="col-12">
-              <label className="form-label">Id</label>
-              <input value={id} disabled="disabled" className="form-control"></input>
-            </div>
+        <label className='form-lable'>phone:</label>
+        <input className='form-control' value={phone} onChange={(e)=>{changephone(e.target.value)}}></input>
 
-            <div className="col-12">
-              <label className="form-label">Name</label>
-              <input value={name} onChange={(e)=>{nameChange(e.target.value)}} className="form-control"></input>
-            </div>
+        <input type='checkbox' className='form-check-input' value={active} onChange={(e)=>{changeactive(e.target.checked)}}></input>{" "}
+        <label className='form-lable' >Is active</label>
 
-             <div className="col-12">
-              <label className="form-label">Email</label>
-              <input value={email} onChange={(e)=>{emailChange(e.target.value)}} className="form-control"></input>
-            </div>
-
-             <div className="col-12">
-              <label className="form-label">Phone</label>
-              <input value={phone} onChange={(e)=>{phoneChange(e.target.value)}} className="form-control"></input>
-            </div>
-
-             <div className="col-12 mt-2">
-              
-              <input value={active} onChange={(e)=>{activeChange(e.target.checked)}} type="checkbox" className="form-check-input"></input>{" "}
-              <label className="form-label">Is active</label>
-            </div>
-
-             <div className="col-12">
-            
-              <button type="submit" className="btn btn-success me-3">Save</button>
-              <Link to="/" className="btn btn-info">Back</Link>
-
-            </div>
-
-                    
-
-
-
-          </form>
+        <div className='my-3'>
+        <button type='submit' className='btn btn-success me-3' >Save</button>
+        <Link to="/" className='btn btn-danger'>Go-back</Link>
         </div>
-      </div>
+      </form>
     </div>
-  </div>
+    </div>
   )
 }
 
 export default EmpEdit
+

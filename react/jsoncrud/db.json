@@ -2,23 +2,16 @@
   "employee": [
     {
       "id": 1,
-      "name": "vidhi",
-      "email": "v@gmail.com",
-      "phone": 99095,
-      "active": false
-    },
-    {
-      "id": 2,
-      "name": "riddhi",
-      "email": "r@gmail.com",
-      "phone": 90164,
+      "name": "json-server",
+      "email": "typicode",
+      "phone": 67890,
       "active": true
     },
     {
-      "id": 3,
-      "name": "nidhi",
-      "email": "n@gmail.com",
-      "phone": "90165",
+      "id": 2,
+      "name": "vidhi",
+      "email": "patel@gmail.com",
+      "phone": "7874700723",
       "active": true
     }
   ]

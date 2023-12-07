@@ -1,112 +1,83 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function EmpListing() {
- 
-    const [empData,setEmpdata] = useState(null);
-    const navigate = useNavigate();
+function Emplisting() {
 
-    useEffect(()=>{
-  
-      fetch("http://localhost:8000/employee")
-      .then((res)=>{ return res.json()})
-      .then((data)=>{
-        //  console.log(data)
-         setEmpdata(data)
-        })
-      .catch((err)=>{console.log(err.message)})
+  const [empdata,setEmpdata] = useState("")
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    fetch("http://localhost:8000/employee")
+    .then((res)=>{return res.json()})
+    .then((data)=>{
+      setEmpdata(data)
     })
+    .catch((err)=>{console.log(err.message)})
+  })
 
-    const LoadView = (id)=>{
-      // console.log(id);
+    const Loadview = (id)=>{
       navigate('/employee/view/'+id)
-      
     }
-
-    const LoadEdit= (id)=>{
-      // console.log(id);
+    const LoadEdit = (id)=>{
       navigate('/employee/edit/'+id)
-      
     }
-
-    const LoadDelete= (id)=>{
-      // console.log(id);
-     if(window.confirm("Are you sure?"))
-     {
-          fetch("http://localhost:8000/employee/"+id,{
-            method:"DELETE",
-            headers:{"content-type":"application/json"},
-            body:JSON.stringify(empData)
-        })
-        .then((res)=>{
-            // console.log(res.json())
-            // return res.json();
-
-            if(res)
-            {
-                alert("updated Successfully..!");
-                navigate('/')
-
-            }
-
-
-        })
-      window.location.reload();
+    const LoadDelete = (id)=>{
+     if(window.confirm("Are you sure..!")){
+      fetch("http://localhost:8000/employee/"+id,{
+        method:"DELETE",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify(empdata)
+    })
+    .then((res)=>{
+        if(res)
+        {
+            alert("DELETED sucessfulyy....")
+            navigate('/')
+        }
+    })
+        window.location.reload()
      }
-      
     }
-  
-    return (
-      <div className="App">
-  
-      <h2 className='text-center'>JSON CRUD</h2>
-      <h3 className='text-center'>Employee Details</h3>
-       <div className='container'>
-  
-      <Link to="/employee/create" className='btn btn-warning m-3'>Add New (+)</Link>
-       <table className='table'>
-          <thead className='table-success'>
-          <tr>
-              <td>Id</td>
-              <td>Name</td>
-              <td>Email</td>
-              <td>Phone</td>
-              <td>Action</td>
+
+
+
+  return (
+    <div>
+        <h1 className='my-5'>Emplooyee list</h1>
+        <button className='my-3 btn btn-info ' onClick={()=>{navigate('/employee/create')}}>Add Employee(+)</button>
+        <div>
+        <table className='table '>
+        <thead className='table table-dark'>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>ACTION</th>
             </tr>
-          </thead>
-  
-          <tbody>
-          
-          { empData && empData.map((item)=>(
-  
-            // console.log(item.name)
-            <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.name}</td>
-            <td>{item.email}</td>
-            <td>{item.phone}</td>
-            <td>
-              <button  onClick={()=>{LoadEdit(item.id)}} className='btn btn-success me-2'>Edit</button>
-
-              <button onClick={()=>{LoadDelete(item.id)}} className='btn btn-danger me-2'>Delete</button>
-
-              <button onClick={()=>{LoadView(item.id)}} className='btn btn-primary'>View</button>
-            </td>
-          </tr>
-  
-          ))}
-  
-         
-          </tbody>
-  
+        </thead>
+        <tbody>
+       
+        {
+            empdata && empdata.map((item)=>(
+                <tr>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.phone}</td>
+                <td>
+                    <button className='btn btn-success me-3'  onClick={()=>{LoadEdit(item.id)}}>Edit</button>
+                    <button className='btn btn-danger me-3' onClick={()=>{LoadDelete(item.id)}}>Delete</button>
+                    <button className='btn btn-warning me-3' onClick={()=>{Loadview(item.id)}}>View</button>
+                </td>
+            </tr>
+            )   )
+           }
+        </tbody>
         </table>
-  
-       </div>
-     
-      </div>
-    );
+        </div>
+    </div>
+  )
 }
 
-export default EmpListing
+export default Emplisting
