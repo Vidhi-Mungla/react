@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { Increment, Decrement } from './action';
+import { useDispatch, useSelector } from 'react-redux';
+import { increment } from './action';
+import { decrement } from './action';
 
-function App()
+function App() 
 {
+ 
+ const count =  useSelector(state => state.count);
+ const dispatch = useDispatch();
 
-  const dispatch = useDispatch();
-  const counter = useSelector(state => state.count) 
-
-  return
-  (
-    <div>
-
-    <button onClick={()=>{dispatch(Increment())}}>+</button>
-     {counter}
-    <button onClick={()=>{dispatch(Decrement())}}>-</button>
-
+  return ( 
+    <div className="App">
+      <button onClick={()=>{dispatch(increment())}}>+</button>
+     <h4> {count} </h4> 
+     <button onClick={()=>{dispatch(decrement())}}>-</button>
     </div>
   );
+
 }
 
 export default App;
