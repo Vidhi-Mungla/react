@@ -3,18 +3,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom';
 import { deleteUsers } from './UserReducer';
 
-
 function Home() {
 
- 
    const usersData= useSelector(state => state.users);
-   console.log(usersData)
+   // console.log(usersData)
+
     const dispatch = useDispatch();
 
-   const LoadDelete = (id)=>
+   const LoadDelete = (id) =>
    {
-    dispatch(deleteUsers({id:id}))
+         dispatch(deleteUsers({id:id})) 
    }
+      
    
   return (
     <div>
@@ -42,9 +42,10 @@ function Home() {
                       <td>{itmes.name}</td>
                       <td>{itmes.email}</td>
                       <td>
-                        <Link to={`/edit/${itmes.id}` } className='btn btn-success me-2'>Edit</Link>
 
+                        <Link to={`/edit/${itmes.id}`}className='btn btn-success me-2'>Edit</Link>
                         <button onClick={()=>{LoadDelete(itmes.id)}} className='btn btn-danger me-2'>Delete</button>
+
                       </td>
                   </tr>
                 ))}

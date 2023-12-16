@@ -12,6 +12,7 @@ function CreateUser() {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
+    
     const usersData= useSelector(state => state.users);
     console.log(usersData)
 
