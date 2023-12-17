@@ -1,63 +1,67 @@
 import React, { useState } from 'react'
-import { addusers } from './UserReducer'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom';
+import { addUser} from './UserReducer';
+import { useDispatch, useSelector } from 'react-redux';
 
 function CreateUser() {
 
-    // const [id,setId] = useState("")
-    const [name,setName] = useState("")
-    const [email,setEmail] = useState("")
+    const usersdata = useSelector(state => state.users)
+    console.log(usersdata)
+
+     const [id,setid] = useState("");
+    const [name,setname] = useState("");
+    const [email,setemail] = useState("");
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
-    
-    const usersData= useSelector(state => state.users);
-    console.log(usersData)
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        dispatch(addusers({id:usersData[usersData.length-1].id + 1,name,email}));
-        navigate("/")
-    }
+     const handleSubmit = (e)=>
+     {
+         e.preventDefault();
+        //  dispatch(addUser({id:usersdata[usersdata.length - 1].id + 1 ,name,email}));
+
+        if (usersdata.length > 0) {
+          dispatch(addUser({ id: usersdata[usersdata.length - 1].id + 1, name, email}));
+        } else {
+          dispatch(addUser({ id:1, name, email}));
+      }
+         navigate("/");
+     }
+
+
+
   return (
-    <div className='row text-start justify-content-center'>
-        <div className='col-6'>
 
-    <form className='container' onSubmit={handleSubmit}>
+    <div className='row justify-content-center text-start'>
+           <div  className='col-6'>
 
-        <h2 className='mt-3'>Add User</h2>
+                <h1 className='text-center mt-3'>Add Data</h1>
 
-        <div className='col-12'>
-            <label className='form-label'>Id</label>
-            <input disabled="disabled" className='form-control'></input>
-        </div>
+               <form className='container' onSubmit={handleSubmit}>
+                         <div className='col-12'>
+                           <lable className='form-label'>Id</lable>
+                           <input className='form-control' disabled='disabled'value={id} onChange={(e)=>{setid(e.target.value)}}></input>
+                          </div>
 
-        <div className='col-12'>
-            <label className='form-label'>Name</label>
-            <input required value={name} onChange={(e)=>{setName(e.target.value)}} className='form-control'></input>
+                          <div className='col-12'>
+                           <lable className='form-label'>Name</lable>
+                           <input required value={name} onChange={(e)=>{setname(e.target.value)}} className='form-control'></input>
+                            {name.length == 0 && <span className='text-danger'>* Enter name</span>}
+                          </div>
 
-            {name.length==0 &&  <span className='text-danger'>* Enter name</span> }
-           
-        </div>
+                          <div className='col-12'>
+                           <lable className='form-label'>Email</lable>
+                           <input required value={email} onChange={(e)=>{setemail(e.target.value)}} className='form-control'></input>
+                           {email.length == 0 && <span className='text-danger'>* Enter email</span>}
+                          </div>
 
-
-        <div className='col-12'>
-            <label className='form-label'>Email</label>
-            <input value={email} onChange={(e)=>{setEmail(e.target.value)}} className='form-control'></input>
-        </div>
-
-        <div className='col-12'>
-           <button className='btn btn-success mt-3'>Save</button>
-        </div>
-
-    </form>
-
-        </div>
-     
+                          <div className='col-12'>
+                           <button className='btn btn-success mt-5'>Save</button>
+                          </div>
+               </form>
+           </div>
     </div>
   )
 }
 
-export default CreateUser
+export default CreateUser;

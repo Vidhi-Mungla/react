@@ -1,75 +1,72 @@
 import React, { useState } from 'react'
-import { editUsers } from './UserReducer'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom';
+import { editUser} from './UserReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 function EditUser() {
 
-    const {userid} = useParams();
-    console.log(userid)
-
+   
     const navigate = useNavigate();
 
+    const {userid} = useParams();
+    // console.log(userid);
+    
     const dispatch = useDispatch();
 
-    const usersData= useSelector(state => state.users);
+    const usersdata = useSelector(state => state.users)
+    // console.log(usersdata)
 
-    const existingUser = usersData.filter(user=>       
-        user.id == userid 
-    )
+    const existingUser = usersdata.filter(user => 
+      user.id == userid);
+      // console.log(existingUser);
 
+      const {id,name,email} = existingUser[0];
 
-    const {name,email} = existingUser[0];
-    console.log(name);//name: priyanshi123
-    const [uname,setuName] = useState(name)
-    const [uemail,setuEmail] = useState(email)
+      const [uid,setuid] = useState(id);
+      const [uname,setuname] = useState(name);
+      const [uemail,setuemail] = useState(email);
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        dispatch(editUsers({id:userid,name:uname,email:uemail}));
-        navigate("/")
-    }
-
+ 
+     const handleSubmit = (e)=>
+     {
+         e.preventDefault();
+         dispatch(editUser({id:userid,name:uname,email:uemail}));
+         navigate("/");
+     }
 
   return (
-    
-    <div className='row text-start justify-content-center'>
-        <div className='col-6'>
 
-    <form className='container' onSubmit={handleSubmit}>
+    <div className='row justify-content-center text-start'>
+           <div  className='col-6'>
 
-        <h2 className='mt-3'>Edit User</h2>
+                <h1 className='text-center mt-3'>Edit Data</h1>
 
-        <div className='col-12'>
-            <label className='form-label'>Id</label>
-            <input disabled="disabled" className='form-control'></input>
-        </div>
+               <form className='container' onSubmit={handleSubmit}>
+                         <div className='col-12'>
+                           <lable className='form-label'>Id</lable>
+                           <input className='form-control'value={uid} onChange={(e)=>{setuid(e.target.value)}}></input>
+                          </div>
 
+                          <div className='col-12'>
+                           <lable className='form-label'>Name</lable>
+                           <input required value={uname} onChange={(e)=>{setuname(e.target.value)}} className='form-control'></input>
+                            {name.length == 0 && <span className='text-danger'>* Enter name</span>}
+                          </div>
 
-        <div className='col-12'>
-            <label className='form-label'>Name</label>
-            <input value={uname} onChange={(e)=>{setuName(e.target.value)}} required  className='form-control'></input>
+                          <div className='col-12'>
+                           <lable className='form-label'>Email</lable>
+                           <input required value={uemail} onChange={(e)=>{setuemail(e.target.value)}} className='form-control'></input>
+                           {email.length == 0 && <span className='text-danger'>* Enter email</span>}
+                          </div>
 
-            {name.length==0 && <span className='text-danger'> *Enter name </span>}          
-        </div>
-
-
-        <div className='col-12'>
-            <label className='form-label'>Email</label>
-            <input value={uemail} onChange={(e)=>{setuEmail(e.target.value)}}  className='form-control'></input>
-        </div>
-
-
-        <div className='col-12'>
-           <button className='btn btn-success mt-3'>Save</button>
-        </div>
-
-    </form>
-        </div>
-     
+                          <div className='col-12'>
+                           <button className='btn btn-success mt-5'>Save</button>
+                          </div>
+               </form>
+           </div>
     </div>
   )
 }
 
-export default EditUser 
+export default EditUser;
