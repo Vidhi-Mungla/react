@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -20,7 +19,7 @@ function Empcreate() {
             headers:{"content-type":"application/json"},
             body:JSON.stringify(finaldata)
         })
-        .then((res)=>{
+        .then((res)=>{ 
             if(res)
             {
                 alert("saved sucessfulyy....")

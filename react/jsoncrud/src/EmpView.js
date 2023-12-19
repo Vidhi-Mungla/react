@@ -1,11 +1,11 @@
-
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+
 
 function EmpView() {
   const [empdata,setEmpdata] = useState("");
   const {empid} = useParams();
-   console.log(empid);
+  console.log(empid);
 
   useEffect(()=>{
     fetch("http://localhost:8000/employee/"+empid)
@@ -18,8 +18,6 @@ function EmpView() {
   })
 
   
-
-
   return (
     <div>
         <h3>id:{empdata.id}</h3>
