@@ -44,8 +44,7 @@ function App()
       else 
       {
         return t;
-      }
-      
+      }     
     })
    )  
   }
@@ -69,12 +68,12 @@ function App()
        onChangeTodo={handleChangeTodo}
        onDeleteTodo={handleDeleteTodo}
       />
-      <ColorChange/>
-      <New/>
-      <Crud/>
-      <MyForm/>
-      <Form/>
-      <UseRefHook/> 
+      {/* <ColorChange/> */}
+      {/* <New/> */}
+      {/* <Crud/> */}
+      {/* <MyForm/> */}
+      {/* <Form/> */}
+      {/* <UseRefHook/>  */}
     </div>
   )
 }

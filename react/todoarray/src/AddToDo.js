@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
-function AddToDo({onAddToDo}) {
+function AddToDo({onAddToDo})
+{
 
-    const [title,setTitle] = useState("");
+   const [title,setTitle] = useState("");
   return (
     <div>
         
@@ -17,11 +18,11 @@ function AddToDo({onAddToDo}) {
                 background:"pink"
             }
         }
-        type='text'
-        value={title}
-        onChange={(e)=>{setTitle(e.target.value)}}
-        />
-        <button className='btn' onClick={()=>{onAddToDo(title)}}>Add</button>
+        type='text' 
+        value={title} 
+        onChange={(e)=>{setTitle(e.target.value)}} 
+        /> 
+        <button className='btn' onClick={()=>{onAddToDo(title)}}>Add</button> 
       
     </div>
   )
