@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "vidhi",
+      "price": "1200",
+      "category": "kids"
+    },
+    {
+      "id": 2,
+      "name": "riddhi",
+      "price": "1200",
+      "category": "women"
+    }
+  ]
+}
