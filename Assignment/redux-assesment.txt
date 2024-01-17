@@ -1,0 +1,183 @@
+import React, { useState } from 'react';
+
+// Custom hook for email validation
+const useEmailValidation = (initialValue) => {
+  const [email, setEmail] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateEmail = (inputEmail) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValid(emailRegex.test(inputEmail));
+  };
+
+  return [email, setEmail, isValid, validateEmail];
+};
+
+// Custom hook for password validation
+const usePasswordValidation = (initialValue) => {
+  const [password, setPassword] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validatePassword = (inputPassword) => {
+    // Add your custom password validation logic here
+    setIsValid(inputPassword.length >= 6);
+  };
+
+  return [password, setPassword, isValid, validatePassword];
+};
+
+// Custom hook for retype password validation
+const useRetypePasswordValidation = (initialValue, password) => {
+  const [retypePassword, setRetypePassword] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateRetypePassword = (inputRetypePassword) => {
+    setIsValid(inputRetypePassword === password);
+  };
+
+  return [retypePassword, setRetypePassword, isValid, validateRetypePassword];
+};
+
+// Custom hook for name validation
+const useNameValidation = (initialValue) => {
+  const [name, setName] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateName = (inputName) => {
+    setIsValid(inputName.trim() !== ''); // Basic validation, not allowing empty names
+  };
+
+  return [name, setName, isValid, validateName];
+};
+
+// Custom hook for phone number validation
+const usePhoneValidation = (initialValue) => {
+  const [phone, setPhone] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validatePhone = (inputPhone) => {
+    const phoneRegex = /^\d{10}$/; // Assumes a 10-digit phone number
+    setIsValid(phoneRegex.test(inputPhone));
+  };
+
+  return [phone, setPhone, isValid, validatePhone];
+};
+
+// Custom hook for address validation
+const useAddressValidation = (initialValue) => {
+  const [address, setAddress] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateAddress = (inputAddress) => {
+    setIsValid(inputAddress.trim() !== ''); // Basic validation, not allowing empty addresses
+  };
+
+  return [address, setAddress, isValid, validateAddress];
+};
+
+// Custom hook for town validation
+const useTownValidation = (initialValue) => {
+  const [town, setTown] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateTown = (inputTown) => {
+    setIsValid(inputTown.trim() !== ''); // Basic validation, not allowing empty towns
+  };
+
+  return [town, setTown, isValid, validateTown];
+};
+
+// Custom hook for region validation
+const useRegionValidation = (initialValue) => {
+  const [region, setRegion] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateRegion = (inputRegion) => {
+    setIsValid(inputRegion.trim() !== ''); // Basic validation, not allowing empty regions
+  };
+
+  return [region, setRegion, isValid, validateRegion];
+};
+
+// Custom hook for postcode/zip validation
+const usePostcodeValidation = (initialValue) => {
+  const [postcode, setPostcode] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validatePostcode = (inputPostcode) => {
+    setIsValid(inputPostcode.trim() !== ''); // Basic validation, not allowing empty postcodes
+  };
+
+  return [postcode, setPostcode, isValid, validatePostcode];
+};
+
+// Custom hook for country validation
+const useCountryValidation = (initialValue) => {
+  const [country, setCountry] = useState(initialValue);
+  const [isValid, setIsValid] = useState(false);
+
+  const validateCountry = (inputCountry) => {
+    setIsValid(inputCountry.trim() !== ''); // Basic validation, not allowing empty countries
+  };
+
+  return [country, setCountry, isValid, validateCountry];
+};
+
+const RegistrationForm = () => {
+  // State and functions for email validation
+  const [email, setEmail, isEmailValid, validateEmail] = useEmailValidation('');
+
+  // State and functions for password validation
+  const [password, setPassword, isPasswordValid, validatePassword] = usePasswordValidation('');
+
+  // State and functions for retype password validation
+  const [retypePassword, setRetypePassword, isRetypePasswordValid, validateRetypePassword] = useRetypePasswordValidation('', password);
+
+  // State and functions for first name validation
+  const [firstName, setFirstName, isFirstNameValid, validateFirstName] = useNameValidation('');
+
+  // State and functions for last name validation
+  const [lastName, setLastName, isLastNameValid, validateLastName] = useNameValidation('');
+
+  // State and functions for phone number validation
+  const [phone, setPhone, isPhoneValid, validatePhone] = usePhoneValidation('');
+
+  // State and functions for address validation
+  const [address, setAddress, isAddressValid, validateAddress] = useAddressValidation('');
+
+  // State and functions for town validation
+  const [town, setTown, isTownValid, validateTown] = useTownValidation('');
+
+  // State and functions for region validation
+  const [region, setRegion, isRegionValid, validateRegion] = useRegionValidation('');
+
+  // State and functions for postcode/zip validation
+  const [postcode, setPostcode, isPostcodeValid, validatePostcode] = usePostcodeValidation('');
+
+  // State and functions for country validation
+  const [country, setCountry, isCountryValid, validateCountry] = useCountryValidation('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Perform additional business logic if needed
+
+    // Displaying the results
+    console.log('Email:', email);
+    console.log('Is Email Valid:', isEmailValid);
+    console.log('Password:', password);
+    console.log('Is Password Valid:', isPasswordValid);
+    console.log('Retype Password:', retypePassword);
+    console.log('Is Retype Password Valid:', isRetypePasswordValid);
+    console.log('First Name:', firstName);
+    console.log('Is First Name Valid:', isFirstNameValid);
+    console.log('Last Name:', lastName);
+    console.log('Is Last Name Valid:', isLastNameValid);
+    console.log('Phone:', phone);
+    console.log('Is Phone Valid:', isPhoneValid);
+    console.log('Address:', address);
+    console.log('Is Address Valid:', isAddressValid);
+    console.log('Town:', town);
+    console.log('Is Town Valid:', isTownValid);
+    console.log('Region:', region);
+    console.log('Is Region Valid:', isRegionValid
